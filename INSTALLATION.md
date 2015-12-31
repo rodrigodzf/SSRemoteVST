@@ -2,7 +2,9 @@
 
 The following is a installation guide written for Linux Distributions. The system that was used for testing the guide is [Fedora 22](https://start.fedoraproject.org/). It may help you compiling the SSRemote VST but in no case asserts to claim completness.
 
-The Plugin uses the [C++11 Standard](https://en.wikipedia.org/wiki/C%2B%2B11) which has to be supported by your compiler (e.g. at least GCC 4.7). 
+The Plugin uses the [C++11 Standard](https://en.wikipedia.org/wiki/C%2B%2B11) which has to be supported by your compiler (e.g. at least GCC 4.7).
+
+OSX NOTE: As of December 2015 there's no full support for jack in 10.11.x, although there's is a beta version that works with some bugs (https://github.com/jackaudio/jack2/issues/144).
 
 1. Clone the VST Plugin repository from Github:
 
@@ -14,10 +16,12 @@ The Plugin uses the [C++11 Standard](https://en.wikipedia.org/wiki/C%2B%2B11) wh
   git clone git@github.com:QULab/SSRemoteVST.git
   ```
 2. Install the Steinberg VST SDK
-  
+
   For installing the Steinberg VST SDK checkout the [Steinberg VST SDK Wiki Page](https://github.com/QULab/SSRemoteVST/wiki/Steinberg-VST).
 
-3. Install several dependencies 
+3. Install several dependencies
+
+  Linux:
 
   The SSRemote VST Plugin uses several external libraries. The following is a list of possible dependencies you may have to solve befor compiling:
 
@@ -28,12 +32,28 @@ The Plugin uses the [C++11 Standard](https://en.wikipedia.org/wiki/C%2B%2B11) wh
   * freetype Libraries (freetype-devel)
   * X11 Libraries (libX11-devel, libXinerama-devel)
 
+  OSX:
+
+  For the plugin the following libraries are required for the plugin
+
+  * jack.0
+  * boost_system-mt
+  * boost_atomic-mt
+  * boost_filesystem-mt
+
+  You can get these libraries with:
+
+  ```
+  brew install jack boost
+
+  ```
+
 4. Set the environment variables
 
   Please set the following environment variables described as follows:
 
   The directory/location of the Steinberg VST3 SDK:
-  
+
   ```bash
   # Steinberg VST3 Audio Plug-Ins SDK
   export VST3_SDK=/path/to/VST3SDK
@@ -47,7 +67,7 @@ The Plugin uses the [C++11 Standard](https://en.wikipedia.org/wiki/C%2B%2B11) wh
   ```
 
   The directory/location of the JUCE Framework located in the SSRemote VST:
-  
+
   ```bash
   # SSRemote VST JUCE Framework
   export JUCE_LIB_CODE=$SSREMOTE_VST/JUCE
@@ -70,5 +90,5 @@ The Plugin uses the [C++11 Standard](https://en.wikipedia.org/wiki/C%2B%2B11) wh
   # compile multicore
   make -j8
   ```
-  
+
 Congratulations! You successfully compiled the SSRemote VST Plugin!
