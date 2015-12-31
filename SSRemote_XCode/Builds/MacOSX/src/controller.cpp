@@ -636,7 +636,7 @@ void Controller::save_xml(const bool write){
         
         writing_xml = true;
 
-        xml_file = new File(File::getCurrentWorkingDirectory().getChildFile("./TestJuce"));
+        xml_file = new File(File::getCurrentWorkingDirectory().getChildFile("./TestJuce.xml"));
         String absolute_path = xml_file->getFullPathName();
         std::cout << "Saving xml to" << absolute_path.toStdString() << std::endl;
         
@@ -646,7 +646,7 @@ void Controller::save_xml(const bool write){
         
         writing_xml = false;
         
-        if (xml_file != nullptr && writing_xml == true){
+        if (xml_file != nullptr){
             
             if(spatdif->writeToFile(*xml_file, String::empty)){
                 delete xml_file;

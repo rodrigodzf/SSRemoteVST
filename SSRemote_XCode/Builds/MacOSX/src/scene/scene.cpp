@@ -42,8 +42,7 @@ SSR::Scene::Scene(float scene_range)
 
 {
 SSR::Logger::get_instance()->log(SSR::Logger::Level::INFO, "Scene wac created!", false);
-
-  new_source("Default Source");
+    
 }
 
 SSR::Scene::~Scene()
