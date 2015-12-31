@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="IEm8Sn" name="SSRemoteVST" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="com.yourcompany.SSRemoteVST" includeBinaryInAppConfig="1"
+              buildVST="1" buildVST3="0" buildAU="1" buildRTAS="0" buildAAX="0"
+              pluginName="SSRemoteVST" pluginDesc="SSRemoteVST" pluginManufacturer="yourcompany"
+              pluginManufacturerCode="Manu" pluginCode="Iem8" pluginChannelConfigs="{1, 1}, {2, 2}"
+              pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
+              pluginSilenceInIsSilenceOut="0" pluginEditorRequiresKeys="0"
+              pluginAUExportPrefix="SSRemoteVSTAU" pluginRTASCategory="" aaxIdentifier="com.yourcompany.SSRemoteVST"
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="4.0.2">
+  <MAINGROUP id="i56uBY" name="SSRemoteVST">
+    <GROUP id="{3788F2F8-7281-7D0D-F36E-5AA27907D10D}" name="src">
+      <GROUP id="{8EBA4F39-2EC3-599F-8599-EBFE8372C081}" name="config">
+        <FILE id="MjMtCg" name="config.cpp" compile="1" resource="0" file="../src/config/config.cpp"/>
+        <FILE id="OQYsZZ" name="config.h" compile="0" resource="0" file="../src/config/config.h"/>
+        <FILE id="d26sb6" name="network_config.cpp" compile="1" resource="0"
+              file="../src/config/network_config.cpp"/>
+        <FILE id="dLTOkp" name="network_config.h" compile="0" resource="0"
+              file="../src/config/network_config.h"/>
+        <FILE id="GBrFXb" name="ssr_colour.cpp" compile="1" resource="0" file="../src/config/ssr_colour.cpp"/>
+        <FILE id="LEMgGU" name="ssr_colour.h" compile="0" resource="0" file="../src/config/ssr_colour.h"/>
+      </GROUP>
+      <GROUP id="{5F7F7BB7-27D3-0507-74F5-CF358BC70116}" name="GUI">
+        <GROUP id="{360F098F-F25F-212D-F651-A9817E27DCD9}" name="head_frame">
+          <FILE id="j6ARUt" name="head_frame_gui_component.cpp" compile="1" resource="0"
+                file="../src/GUI/head_frame/head_frame_gui_component.cpp"/>
+          <FILE id="bytn1z" name="head_frame_gui_component.h" compile="0" resource="0"
+                file="../src/GUI/head_frame/head_frame_gui_component.h"/>
+          <FILE id="U09G8I" name="network_gui_component.cpp" compile="1" resource="0"
+                file="../src/GUI/head_frame/network_gui_component.cpp"/>
+          <FILE id="TcjTTa" name="network_gui_component.h" compile="0" resource="0"
+                file="../src/GUI/head_frame/network_gui_component.h"/>
+        </GROUP>
+        <GROUP id="{55721713-B574-9EB8-710F-B0DFD0975CDE}" name="source_frame">
+          <GROUP id="{3BA188C3-FEA6-301B-89EC-2E351DB2484E}" name="source_pad">
+            <FILE id="bwPaDb" name="grid_gui_component.cpp" compile="1" resource="0"
+                  file="../src/GUI/source_frame/source_pad/grid_gui_component.cpp"/>
+            <FILE id="LrxLRF" name="grid_gui_component.h" compile="0" resource="0"
+                  file="../src/GUI/source_frame/source_pad/grid_gui_component.h"/>
+            <FILE id="nIP9Ap" name="scale_reference_gui_component.cpp" compile="1"
+                  resource="0" file="../src/GUI/source_frame/source_pad/scale_reference_gui_component.cpp"/>
+            <FILE id="g95goG" name="scale_reference_gui_component.h" compile="0"
+                  resource="0" file="../src/GUI/source_frame/source_pad/scale_reference_gui_component.h"/>
+            <FILE id="Shy90f" name="source_gui_component.cpp" compile="1" resource="0"
+                  file="../src/GUI/source_frame/source_pad/source_gui_component.cpp"/>
+            <FILE id="n8Khbj" name="source_gui_component.h" compile="0" resource="0"
+                  file="../src/GUI/source_frame/source_pad/source_gui_component.h"/>
+            <FILE id="JwfyWD" name="source_pad_and_controls_gui_component.cpp"
+                  compile="1" resource="0" file="../src/GUI/source_frame/source_pad/source_pad_and_controls_gui_component.cpp"/>
+            <FILE id="rDfmVo" name="source_pad_and_controls_gui_component.h" compile="0"
+                  resource="0" file="../src/GUI/source_frame/source_pad/source_pad_and_controls_gui_component.h"/>
+            <FILE id="nDOClR" name="source_pad_gui_component.cpp" compile="1" resource="0"
+                  file="../src/GUI/source_frame/source_pad/source_pad_gui_component.cpp"/>
+            <FILE id="zUpa5m" name="source_pad_gui_component.h" compile="0" resource="0"
+                  file="../src/GUI/source_frame/source_pad/source_pad_gui_component.h"/>
+            <FILE id="kEmkMP" name="zoom_gui_component.cpp" compile="1" resource="0"
+                  file="../src/GUI/source_frame/source_pad/zoom_gui_component.cpp"/>
+            <FILE id="JniW64" name="zoom_gui_component.h" compile="0" resource="0"
+                  file="../src/GUI/source_frame/source_pad/zoom_gui_component.h"/>
+          </GROUP>
+          <GROUP id="{C5387FEC-EA51-5061-2B9E-22EFCC61E9DC}" name="source_parameters">
+            <FILE id="T5vSvh" name="source_parameters_gui_component.cpp" compile="1"
+                  resource="0" file="../src/GUI/source_frame/source_parameters/source_parameters_gui_component.cpp"/>
+            <FILE id="YMrzrr" name="source_parameters_gui_component.h" compile="0"
+                  resource="0" file="../src/GUI/source_frame/source_parameters/source_parameters_gui_component.h"/>
+          </GROUP>
+          <FILE id="GtgnaP" name="source_frame_gui_component.cpp" compile="1"
+                resource="0" file="../src/GUI/source_frame/source_frame_gui_component.cpp"/>
+          <FILE id="BBQair" name="source_frame_gui_component.h" compile="0" resource="0"
+                file="../src/GUI/source_frame/source_frame_gui_component.h"/>
+        </GROUP>
+        <FILE id="xFnYWA" name="gui_components_configurator.cpp" compile="1"
+              resource="0" file="../src/GUI/gui_components_configurator.cpp"/>
+        <FILE id="i69pa6" name="gui_components_configurator.h" compile="0"
+              resource="0" file="../src/GUI/gui_components_configurator.h"/>
+        <FILE id="rgTdbU" name="main_gui_component.cpp" compile="1" resource="0"
+              file="../src/GUI/main_gui_component.cpp"/>
+        <FILE id="iaOqCI" name="main_gui_component.h" compile="0" resource="0"
+              file="../src/GUI/main_gui_component.h"/>
+      </GROUP>
+      <GROUP id="{C1C42695-2055-A729-BF9F-B892AF3559E4}" name="images">
+        <FILE id="mVrYLL" name="ssr_logo_large.png" compile="0" resource="1"
+              file="../src/images/ssr_logo_large.png"/>
+        <FILE id="h3akg0" name="tub_logo.png" compile="0" resource="1" file="../src/images/tub_logo.png"/>
+      </GROUP>
+      <GROUP id="{E90891B5-1AAB-416D-321A-A051F2F62E56}" name="parameter">
+        <FILE id="z5AY1n" name="parameter.h" compile="0" resource="0" file="../src/parameter/parameter.h"/>
+      </GROUP>
+      <GROUP id="{E49DC031-B811-10BC-5C87-EA65F2D1D9F5}" name="scene">
+        <FILE id="yHbkDY" name="parameter_translation_functions.cpp" compile="1"
+              resource="0" file="../src/scene/parameter_translation_functions.cpp"/>
+        <FILE id="imSs9q" name="parameter_translation_functions.h" compile="0"
+              resource="0" file="../src/scene/parameter_translation_functions.h"/>
+        <FILE id="drxJOW" name="scene.cpp" compile="1" resource="0" file="../src/scene/scene.cpp"/>
+        <FILE id="QhyYx0" name="scene.h" compile="0" resource="0" file="../src/scene/scene.h"/>
+        <FILE id="yCyhQB" name="source.cpp" compile="1" resource="0" file="../src/scene/source.cpp"/>
+        <FILE id="CBJ4PV" name="source.h" compile="0" resource="0" file="../src/scene/source.h"/>
+      </GROUP>
+      <GROUP id="{F47D699F-024A-BE2D-AD1F-5431645B701C}" name="utils">
+        <FILE id="Fsku6v" name="clock.cpp" compile="1" resource="0" file="../src/utils/clock.cpp"/>
+        <FILE id="FE5iuK" name="clock.h" compile="0" resource="0" file="../src/utils/clock.h"/>
+        <FILE id="bjpf7k" name="helper.cpp" compile="1" resource="0" file="../src/utils/helper.cpp"/>
+        <FILE id="fIiVYC" name="helper.h" compile="0" resource="0" file="../src/utils/helper.h"/>
+        <FILE id="FZP8NQ" name="iconnection.h" compile="0" resource="0" file="../src/utils/iconnection.h"/>
+        <FILE id="eXU2Ao" name="jack_client.cpp" compile="1" resource="0" file="../src/utils/jack_client.cpp"/>
+        <FILE id="u30PUr" name="jack_client.h" compile="0" resource="0" file="../src/utils/jack_client.h"/>
+        <FILE id="Ar24ef" name="logger.cpp" compile="1" resource="0" file="../src/utils/logger.cpp"/>
+        <FILE id="gY7wmA" name="logger.h" compile="0" resource="0" file="../src/utils/logger.h"/>
+        <FILE id="Pjhhbv" name="random_machine.cpp" compile="1" resource="0"
+              file="../src/utils/random_machine.cpp"/>
+        <FILE id="iCsYQr" name="random_machine.h" compile="0" resource="0"
+              file="../src/utils/random_machine.h"/>
+        <FILE id="QEQuC1" name="ssr_requester.cpp" compile="1" resource="0"
+              file="../src/utils/ssr_requester.cpp"/>
+        <FILE id="sLW52l" name="ssr_requester.h" compile="0" resource="0" file="../src/utils/ssr_requester.h"/>
+        <FILE id="l483Rd" name="tcp_connection.cpp" compile="1" resource="0"
+              file="../src/utils/tcp_connection.cpp"/>
+        <FILE id="GEzbI9" name="tcp_connection.h" compile="0" resource="0"
+              file="../src/utils/tcp_connection.h"/>
+        <FILE id="SU0stU" name="update_specificator.cpp" compile="1" resource="0"
+              file="../src/utils/update_specificator.cpp"/>
+        <FILE id="sOwxpI" name="update_specificator.h" compile="0" resource="0"
+              file="../src/utils/update_specificator.h"/>
+      </GROUP>
+      <FILE id="OxciPX" name="controller.cpp" compile="1" resource="0" file="../src/controller.cpp"/>
+      <FILE id="KItIas" name="controller.h" compile="0" resource="0" file="../src/controller.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" postbuildCommand="&#13;&#10;# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on &#13;&#10;# which plugin types you've built&#13;&#10;&#13;&#10;original=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME&#13;&#10;&#13;&#10;# this looks inside the binary to detect which platforms are needed.. &#13;&#10;copyAU=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'AudioUnit' | wc -l&#96;&#13;&#10;copyVST=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'VSTPlugin' | wc -l&#96;&#13;&#10;copyVST3=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'GetPluginFactory' | wc -l&#96;&#13;&#10;copyRTAS=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'CProcess' | wc -l&#96;&#13;&#10;copyAAX=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'ACFStartup' | wc -l&#96;&#13;&#10;&#13;&#10;if [ $copyAU -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AudioUnit folder...&quot;&#13;&#10;  AUDir=~/Library/Audio/Plug-Ins/Components&#13;&#10;  mkdir -p &quot;$AUDir&quot;&#13;&#10;  AU=$AUDir/$PRODUCT_NAME.component&#13;&#10;  if [ -d &quot;$AU&quot; ]; then &#13;&#10;    rm -r &quot;$AU&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$AU&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$AU/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$AU/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyVST -gt 0 ]; then&#13;&#10;  echo &quot;Copying to VST folder...&quot;&#13;&#10;  VSTDir=~/Library/Audio/Plug-Ins/VST&#13;&#10;  mkdir -p &quot;$VSTDir&quot;&#13;&#10;  VST=$VSTDir/$PRODUCT_NAME.vst&#13;&#10;  if [ -d &quot;$VST&quot; ]; then &#13;&#10;    rm -r &quot;$VST&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$VST&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyVST3 -gt 0 ]; then&#13;&#10;  echo &quot;Copying to VST3 folder...&quot;&#13;&#10;  VST3Dir=~/Library/Audio/Plug-Ins/VST3&#13;&#10;  mkdir -p &quot;$VST3Dir&quot;&#13;&#10;  VST3=$VST3Dir/$PRODUCT_NAME.vst3&#13;&#10;  if [ -d &quot;$VST3&quot; ]; then &#13;&#10;    rm -r &quot;$VST3&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$VST3&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST3/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST3/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyRTAS -gt 0 ]; then&#13;&#10;  echo &quot;Copying to RTAS folder...&quot;&#13;&#10;  RTASDir=/Library/Application\ Support/Digidesign/Plug-Ins&#13;&#10;  if [ -d &quot;$RTASDir&quot; ]; then&#13;&#10;    RTAS=$RTASDir/$PRODUCT_NAME.dpm&#13;&#10;    if [ -d &quot;$RTAS&quot; ]; then&#13;&#10;      rm -r &quot;$RTAS&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -r &quot;$original&quot; &quot;$RTAS&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyAAX -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AAX folder...&quot;&#13;&#10;&#13;&#10;  if [ -d &quot;/Applications/ProTools_3PDev/Plug-Ins&quot; ]; then&#13;&#10;    AAX1=&quot;/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX1&quot; ]; then&#13;&#10;      rm -r &quot;$AAX1&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -R -H &quot;$original&quot; &quot;$AAX1&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  if [ -d &quot;/Library/Application Support/Avid/Audio/Plug-Ins&quot; ]; then&#13;&#10;    AAX2=&quot;/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX2&quot; ]; then&#13;&#10;      rm -r &quot;$AAX2&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -R -H &quot;$original&quot; &quot;$AAX2&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;"
+               vstFolder="" externalLibraries="boost_system-mt&#10;boost_atomic-mt&#10;boost_filesystem-mt&#10;jack.0">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="SSRemoteVST" headerPath="/usr/local/Cellar/jack/0.124.1/include&#10;/usr/local/Cellar/boost/1.58.0/include&#10;/usr/local/Cellar/boost/1.58.0/include/boost&#10;/usr/local/Cellar/boost/1.58.0/include/boost/system&#10;/usr/local/Cellar/boost/1.58.0/include/boost/atomic"
+                       cppLanguageStandard="c++11"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="3" targetName="SSRemoteVST" headerPath="/usr/local/Cellar/jack/0.124.1/include&#10;/usr/local/Cellar/boost/1.58.0/include&#10;/usr/local/Cellar/boost/1.58.0/include/boost&#10;/usr/local/Cellar/boost/1.58.0/include/boost/system&#10;/usr/local/Cellar/boost/1.58.0/include/boost/atomic"
+                       cppLanguageStandard="c++11"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
+</JUCERPROJECT>
