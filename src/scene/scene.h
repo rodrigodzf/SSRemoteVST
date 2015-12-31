@@ -21,7 +21,7 @@
 #include <src/scene/source.h>
 
 //JUCE Lib
-#include <JUCE/JuceHeader.h>
+#include <JuceHeader.h>
 
 namespace SSR
 {

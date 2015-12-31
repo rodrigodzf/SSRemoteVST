@@ -24,7 +24,7 @@
 #include <src/utils/logger.h>
 
 //JUCE Lib
-#include <JUCE/JuceHeader.h>
+#include <JuceHeader.h>
 
 //============================================================================
 // PUBLIC

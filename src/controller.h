@@ -22,7 +22,7 @@
 #include <map>
 
 //JUCE Lib
-#include <JUCE/JuceHeader.h>
+#include <JuceHeader.h>
 
 //Own classes
 #include <src/utils/jack_client.h>
