@@ -90,12 +90,16 @@ SSR::Source::Source(const SSR::Source& other)
 , jackport(other.jackport)
 {
 
+    
+    
+    
+    
 }
 
-SSR::Source& SSR::Source::operator=(const SSR::Source& other)
+SSR::Source& SSR::Source::operator=(const SSR::Source& other) 
 {
 
-  if (*this != other) {
+    if (*this != other) {
     SSR::Source tmp(other);
     swap(*this, tmp);
   }
@@ -286,29 +290,30 @@ void SSR::Source::set_all_parameters_on_default()
   fixed.set_to_default();
 }
 
-bool operator==(const SSR::Source& lhs, const SSR::Source& rhs)
+bool SSR::Source::operator!=(const SSR::Source& rhs)
+{
+    return !(*this == rhs);
+}
+
+bool SSR::Source::operator==(const SSR::Source& rhs)
 {
   bool is_equal = true;
 
-  is_equal = is_equal ? lhs.get_x_position()            == rhs.get_x_position()         : false;
-  is_equal = is_equal ? lhs.get_y_position()            == rhs.get_y_position()         : false;
-  is_equal = is_equal ? lhs.get_gain()                  == rhs.get_gain()               : false;
-  is_equal = is_equal ? lhs.get_orientation()           == rhs.get_orientation()        : false;
-  is_equal = is_equal ? lhs.get_mute()                  == rhs.get_mute()               : false;
-  is_equal = is_equal ? lhs.get_model_point()           == rhs.get_model_point()        : false;
-  is_equal = is_equal ? lhs.get_fixed()                 == rhs.get_fixed()              : false;
-  is_equal = is_equal ? lhs.get_id()                    == rhs.get_id()                 : false;
-  is_equal = is_equal ? lhs.get_name()                  == rhs.get_name()               : false;
-  is_equal = is_equal ? lhs.get_jackport()              == rhs.get_jackport()           : false;
-  is_equal = is_equal ? lhs.get_properties_file()       == rhs.get_properties_file()    : false;
+  is_equal = is_equal ? this->get_x_position()            == rhs.get_x_position()         : false;
+  is_equal = is_equal ? this->get_y_position()            == rhs.get_y_position()         : false;
+  is_equal = is_equal ? this->get_gain()                  == rhs.get_gain()               : false;
+  is_equal = is_equal ? this->get_orientation()           == rhs.get_orientation()        : false;
+  is_equal = is_equal ? this->get_mute()                  == rhs.get_mute()               : false;
+  is_equal = is_equal ? this->get_model_point()           == rhs.get_model_point()        : false;
+  is_equal = is_equal ? this->get_fixed()                 == rhs.get_fixed()              : false;
+  is_equal = is_equal ? this->get_id()                    == rhs.get_id()                 : false;
+  is_equal = is_equal ? this->get_name()                  == rhs.get_name()               : false;
+  is_equal = is_equal ? this->get_jackport()              == rhs.get_jackport()           : false;
+  is_equal = is_equal ? this->get_properties_file()       == rhs.get_properties_file()    : false;
 
   return is_equal;
 }
 
-bool operator!=(const SSR::Source& lhs, const SSR::Source& rhs)
-{
-  return !(lhs == rhs);
-}
 
 void std::swap(SSR::Source& first, SSR::Source& second)
 {

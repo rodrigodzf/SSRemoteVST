@@ -102,16 +102,16 @@ namespace SSR {
          * @author   Florian Willich
          */
         explicit Parameter(        DiscreteType discrete_value,
-                                   DiscreteType default_discrete_value,
-                                   std::function<ContinuousType(DiscreteType)> translate_to_continuous,
-                                   std::function<DiscreteType(ContinuousType)> translate_to_discrete,
-                                   std::string name)
-                : translate_to_continuous(translate_to_continuous)
-                , translate_to_discrete(translate_to_discrete)
-                , discrete_value(discrete_value)
-                , default_discrete_value(default_discrete_value)
-                , continuous_value(translate_to_continuous(discrete_value))
-                , name(name)
+                           DiscreteType default_discrete_value,
+                           std::function<ContinuousType(DiscreteType)> translate_to_continuous,
+                           std::function<DiscreteType(ContinuousType)> translate_to_discrete,
+                           std::string name)
+        : translate_to_continuous(translate_to_continuous)
+        , translate_to_discrete(translate_to_discrete)
+        , discrete_value(discrete_value)
+        , default_discrete_value(default_discrete_value)
+        , continuous_value(translate_to_continuous(discrete_value))
+        , name(name)
         {
 
         }
@@ -124,12 +124,12 @@ namespace SSR {
          * @author Florian Willich
          */
         Parameter(const Parameter<DiscreteType, ContinuousType>& other)
-                : translate_to_continuous(other.translate_to_continuous)
-                , translate_to_discrete(other.translate_to_discrete)
-                , discrete_value(other.discrete_value)
-                , default_discrete_value(other.default_discrete_value)
-                , continuous_value(other.continuous_value)
-                , name(other.name)
+        : translate_to_continuous(other.translate_to_continuous)
+        , translate_to_discrete(other.translate_to_discrete)
+        , discrete_value(other.discrete_value)
+        , default_discrete_value(other.default_discrete_value)
+        , continuous_value(other.continuous_value)
+        , name(other.name)
         {
 
         }
@@ -163,12 +163,12 @@ namespace SSR {
          * @author    Florian Willich
          */
         Parameter(Parameter<DiscreteType, ContinuousType>&& other)
-                : translate_to_continuous(std::move(other.translate_to_continuous))
-                , translate_to_discrete(std::move(other.translate_to_discrete))
-                , discrete_value(std::move(other.discrete_value))
-                , default_discrete_value(std::move(other.default_discrete_value))
-                , continuous_value(std::move(other.continuous_value))
-                , name(std::move(other.name))
+        : translate_to_continuous(std::move(other.translate_to_continuous))
+        , translate_to_discrete(std::move(other.translate_to_discrete))
+        , discrete_value(std::move(other.discrete_value))
+        , default_discrete_value(std::move(other.default_discrete_value))
+        , continuous_value(std::move(other.continuous_value))
+        , name(std::move(other.name))
         {
 
         }
@@ -327,60 +327,60 @@ namespace SSR {
 
     };
 
-}
 
-/**
- * Returning an output stream containing the parameter data as a string as follows:
- *
- * 'name': Discrete Value -> 'discrete_value' | Continuous Value -> 'continuous_value'
- *
- * @param               os              The output stream to which the string
- *                                      representation of a Parameter will be
- *                                      added.
- * @param               parameter       The Parameter which data will be
- *                                      represented as a string.
- *
- * @return the output stream containing the Parameters representation as a string.
- *
- * @author              Florian Willich
- */
-template <class DiscreteType, class ContinuousType>
-std::ostream& operator<<(std::ostream& os, const SSR::Parameter<DiscreteType, ContinuousType>& parameter)
-{
-    os << parameter.get_name() << ": Discrete Value -> " << parameter.get_discrete_value() << " | Continuous Value -> " << parameter.get_continuous_value();
-    return os;
-}
+    /**
+     * Returning an output stream containing the parameter data as a string as follows:
+     *
+     * 'name': Discrete Value -> 'discrete_value' | Continuous Value -> 'continuous_value'
+     *
+     * @param               os              The output stream to which the string
+     *                                      representation of a Parameter will be
+     *                                      added.
+     * @param               parameter       The Parameter which data will be
+     *                                      represented as a string.
+     *
+     * @return the output stream containing the Parameters representation as a string.
+     *
+     * @author              Florian Willich
+     */
+    template <class DiscreteType, class ContinuousType>
+    std::ostream& operator<<(std::ostream& os, const SSR::Parameter<DiscreteType, ContinuousType>& parameter)
+    {
+        os << parameter.get_name() << ": Discrete Value -> " << parameter.get_discrete_value() << " | Continuous Value -> " << parameter.get_continuous_value();
+        return os;
+    }
 
-/**
- * Equal operator returning true if the lhs and rhs Parameters are equal, else
- * false.
- *
- * @param       lhs         The left hand side Parameter.
- *
- * @param       rhs         The right hand side Parameter.
- *
- * @return true if the lhs and rhs Parameters are equal, else false.
- */
-template <class DiscreteType, class ContinuousType>
-bool operator==(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
-{
-    return (lhs.get_discrete_value() == rhs.get_discrete_value()) && (lhs.get_continuous_value() == rhs.get_continuous_value());
-}
+    /**
+     * Equal operator returning true if the lhs and rhs Parameters are equal, else
+     * false.
+     *
+     * @param       lhs         The left hand side Parameter.
+     *
+     * @param       rhs         The right hand side Parameter.
+     *
+     * @return true if the lhs and rhs Parameters are equal, else false.
+     */
+    template <class DiscreteType, class ContinuousType>
+    bool operator==(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
+    {
+        return (lhs.get_discrete_value() == rhs.get_discrete_value()) && (lhs.get_continuous_value() == rhs.get_continuous_value());
+    }
 
-/**
- * Unequal operator returning false if the lhs and rhs Parameters are equal, else
- * true.
- *
- * @param       lhs         The left hand side Parameter.
- *
- * @param       rhs         The right hand side Parameter.
- *
- * @return false if the lhs and rhs Parameters are equal, else true.
- */
-template <class DiscreteType, class ContinuousType>
-bool operator!=(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
-{
-    return !(lhs == rhs);
+    /**
+     * Unequal operator returning false if the lhs and rhs Parameters are equal, else
+     * true.
+     *
+     * @param       lhs         The left hand side Parameter.
+     *
+     * @param       rhs         The right hand side Parameter.
+     *
+     * @return false if the lhs and rhs Parameters are equal, else true.
+     */
+    template <class DiscreteType, class ContinuousType>
+    bool operator!=(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
+    {
+        return !(lhs == rhs);
+    }
 }
 
 #endif
