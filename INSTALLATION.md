@@ -34,7 +34,7 @@ OSX NOTE: As of December 2015 there's no full support for jack in 10.11.x, altho
 
   OSX:
 
-  For the plugin the following libraries are required for the plugin
+  The following libraries are required for the plugin
 
   * jack.0
   * boost_system-mt
