@@ -21,10 +21,7 @@
 #include <mutex>
 
 namespace SSR {
-
-
-
-
+    
     /**
      * This class represents a VST parameter:
      *
@@ -80,9 +77,9 @@ namespace SSR {
      */
     template<class DiscreteType, class ContinuousType>
     class Parameter {
-
+        
     public:
-
+        
         /**
          * Constructs a Parameter object with the transferred parameters.
          *
@@ -105,20 +102,20 @@ namespace SSR {
          * @author   Florian Willich
          */
         explicit Parameter(        DiscreteType discrete_value,
-                                   DiscreteType default_discrete_value,
-                                   std::function<ContinuousType(DiscreteType)> translate_to_continuous,
-                                   std::function<DiscreteType(ContinuousType)> translate_to_discrete,
-                                   std::string name)
-                : translate_to_continuous(translate_to_continuous)
-                , translate_to_discrete(translate_to_discrete)
-                , discrete_value(discrete_value)
-                , default_discrete_value(default_discrete_value)
-                , continuous_value(translate_to_continuous(discrete_value))
-                , name(name)
+                           DiscreteType default_discrete_value,
+                           std::function<ContinuousType(DiscreteType)> translate_to_continuous,
+                           std::function<DiscreteType(ContinuousType)> translate_to_discrete,
+                           std::string name)
+        : translate_to_continuous(translate_to_continuous)
+        , translate_to_discrete(translate_to_discrete)
+        , discrete_value(discrete_value)
+        , default_discrete_value(default_discrete_value)
+        , continuous_value(translate_to_continuous(discrete_value))
+        , name(name)
         {
-
+            
         }
-
+        
         /**
          * Copy constructor.
          *
@@ -127,16 +124,16 @@ namespace SSR {
          * @author Florian Willich
          */
         Parameter(const Parameter<DiscreteType, ContinuousType>& other)
-                : translate_to_continuous(other.translate_to_continuous)
-                , translate_to_discrete(other.translate_to_discrete)
-                , discrete_value(other.discrete_value)
-                , default_discrete_value(other.default_discrete_value)
-                , continuous_value(other.continuous_value)
-                , name(other.name)
+        : translate_to_continuous(other.translate_to_continuous)
+        , translate_to_discrete(other.translate_to_discrete)
+        , discrete_value(other.discrete_value)
+        , default_discrete_value(other.default_discrete_value)
+        , continuous_value(other.continuous_value)
+        , name(other.name)
         {
-
+            
         }
-
+        
         /**
          * Assignment operator.
          *
@@ -148,15 +145,15 @@ namespace SSR {
          */
         Parameter<DiscreteType, ContinuousType> &operator=(const Parameter<DiscreteType, ContinuousType> &rhs)
         {
-
+            
             if (*this != rhs) {
                 Parameter<DiscreteType, ContinuousType> tmp(rhs);
                 swap(*this, tmp);
             }
-
+            
             return *this;
         }
-
+        
         /**
          * Move constructor.
          *
@@ -166,23 +163,23 @@ namespace SSR {
          * @author    Florian Willich
          */
         Parameter(Parameter<DiscreteType, ContinuousType>&& other)
-                : translate_to_continuous(std::move(other.translate_to_continuous))
-                , translate_to_discrete(std::move(other.translate_to_discrete))
-                , discrete_value(std::move(other.discrete_value))
-                , default_discrete_value(std::move(other.default_discrete_value))
-                , continuous_value(std::move(other.continuous_value))
-                , name(std::move(other.name))
+        : translate_to_continuous(std::move(other.translate_to_continuous))
+        , translate_to_discrete(std::move(other.translate_to_discrete))
+        , discrete_value(std::move(other.discrete_value))
+        , default_discrete_value(std::move(other.default_discrete_value))
+        , continuous_value(std::move(other.continuous_value))
+        , name(std::move(other.name))
         {
-
+            
         }
-
+        
         /**
          * Destructor.
          */
         ~Parameter() {
-
+            
         }
-
+        
         /**
          * Returns the discrete value.
          *
@@ -194,7 +191,7 @@ namespace SSR {
         {
             return discrete_value;
         }
-
+        
         /**
          * Returns the continuous value.
          *
@@ -206,7 +203,7 @@ namespace SSR {
         {
             return continuous_value;
         }
-
+        
         /**
          * Sets the Parameters discrete value to new_discrete_value and
          * also the continuous value by translating it.
@@ -223,7 +220,7 @@ namespace SSR {
             discrete_value = new_discrete_value;
             continuous_value = translate_to_continuous(discrete_value);
         }
-
+        
         /**
          * Sets the Parameters continuous value to new_continuous_value and
          * also the discrete value by translating it.
@@ -240,7 +237,7 @@ namespace SSR {
             continuous_value = new_continuous_value;
             discrete_value = translate_to_discrete(continuous_value);
         }
-
+        
         /**
          * Sets the Parameter to the default value which was set during
          * construction.
@@ -252,7 +249,7 @@ namespace SSR {
             discrete_value = default_discrete_value;
             continuous_value = translate_to_continuous(discrete_value);
         }
-
+        
         /**
          * This method returns the name of the parameter.
          *
@@ -264,7 +261,7 @@ namespace SSR {
         {
             return name;
         }
-
+        
         /**
          * This method sets the name of the parameter with the transfered
          * parameter new_name.
@@ -278,7 +275,7 @@ namespace SSR {
         {
             name = new_name;
         }
-
+        
         /**
          * Swaps the lhs with the rhs Parameter. Please note that this method
          * requires the Parameters types to be swapable by using the namespace std.
@@ -295,42 +292,42 @@ namespace SSR {
             swap(lhs.translate_to_continuous, rhs.translate_to_continuous);
             swap(lhs.name, rhs.name);
         }
-
+        
     private:
-
+        
         /**
          * The discrete representation of the Parameters value.
          */
         DiscreteType discrete_value;
-
+        
         /**
          * The default discrete value.
          */
         DiscreteType default_discrete_value;
-
+        
         /**
          * The continuous representation of the Parameters value.
          */
         ContinuousType continuous_value;
-
+        
         /**
          * Function that translates the discrete to the continuous value.
          */
         std::function<ContinuousType(DiscreteType)> translate_to_continuous;
-
+        
         /**
          * Function that translates the continuous to the discrete value.
          */
         std::function<DiscreteType(ContinuousType)> translate_to_discrete;
-
+        
         /**
          * The name of the parameter
          */
         std::string name;
-
+        
     };
-
-
+    
+    
     /**
      * Returning an output stream containing the parameter data as a string as follows:
      *
@@ -352,7 +349,7 @@ namespace SSR {
         os << parameter.get_name() << ": Discrete Value -> " << parameter.get_discrete_value() << " | Continuous Value -> " << parameter.get_continuous_value();
         return os;
     }
-
+    
     /**
      * Equal operator returning true if the lhs and rhs Parameters are equal, else
      * false.
@@ -368,7 +365,7 @@ namespace SSR {
     {
         return (lhs.get_discrete_value() == rhs.get_discrete_value()) && (lhs.get_continuous_value() == rhs.get_continuous_value());
     }
-
+    
     /**
      * Unequal operator returning false if the lhs and rhs Parameters are equal, else
      * true.
@@ -379,39 +376,11 @@ namespace SSR {
      *
      * @return false if the lhs and rhs Parameters are equal, else true.
      */
-
-    //  template <class DiscreteType, class ContinuousType>
-    //  bool operator!=(SSR::Parameter<DiscreteType, ContinuousType>& lhs, SSR::Parameter<DiscreteType, ContinuousType>& rhs)
-    //  {
-    //      return !(lhs == rhs);
-    //  }
-    //
-     template <class DiscreteType, class ContinuousType>
-     bool operator!=( const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
-     {
-
-         return !(lhs == rhs);
-     }
-
-    //  template <class DiscreteType, class ContinuousType>
-    //  bool operator!=( SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Source& rhs)
-    //  {
-    //      return !(lhs == rhs);
-    //  }
-    //
-    //  template <class DiscreteType, class ContinuousType>
-    //  bool operator!=(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, SSR::Parameter<DiscreteType, ContinuousType>& rhs)
-    //  {
-    //      return !(lhs == rhs);
-    //  }
-    //
-    // template <class DiscreteType, class ContinuousType>
-    // bool operator!=(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
-    // {
-    //     return !(lhs == rhs);
-    // }
+    template <class DiscreteType, class ContinuousType>
+    bool operator!=(const SSR::Parameter<DiscreteType, ContinuousType>& lhs, const SSR::Parameter<DiscreteType, ContinuousType>& rhs)
+    {
+        return !(lhs == rhs);
+    }
 }
-
-
 
 #endif
