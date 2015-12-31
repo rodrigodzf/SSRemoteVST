@@ -74,7 +74,6 @@
 		AAD32ED9EE266A63A0C9B297 /* juce_video.mm in Sources */ = {isa = PBXBuildFile; fileRef = A5B9460A3EC2B71EDE015B9C /* juce_video.mm */; };
 		AC1967E4D7BBC5FE0E95F7E0 /* juce_AAX_Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19AB7502D8054E60404FACE /* juce_AAX_Wrapper.cpp */; };
 		AD12F119D8D1F33E20976B81 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BF78DB84844EF2707A9BBC /* AudioToolbox.framework */; };
-		B59FDBB850014FFC19FFFB57 /* AUMIDIEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F44215D334AF15D10801E3 /* AUMIDIEffectBase.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		B5D55423A4C8F88E4FBDA445 /* juce_audio_basics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 43DE2B1D7B280DCDC602AA87 /* juce_audio_basics.mm */; };
 		B95763B8B436319AFF598F63 /* juce_PluginUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 574205EA33E54D4E8F4F98C2 /* juce_PluginUtilities.cpp */; };
 		BBB10381BBACDEA4B008FF03 /* juce_gui_basics.mm in Sources */ = {isa = PBXBuildFile; fileRef = A63FD9BD572114F67D4232EF /* juce_gui_basics.mm */; };
@@ -83,7 +82,6 @@
 		CAC4A126090825238AC658A2 /* AUBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7FCE5A381949E683B8DC14 /* AUBuffer.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CD6049452FE417048CBC329A /* AUDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A3B4FE9E3D907389D68483F /* AUDispatch.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CF035CDEE1B97634780173E2 /* juce_gui_extra.mm in Sources */ = {isa = PBXBuildFile; fileRef = F56891A0DD2E052972881B90 /* juce_gui_extra.mm */; };
-		D1F8B442396FB9408957E83F /* AUEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AADFC353269654B8475D0AC8 /* AUEffectBase.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D4C0796FF59321C37D07BBEA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84B6FB55EEFE6ECB7BFC16C /* Carbon.framework */; };
 		D5BD8FB7BD83D4E43C6BF9CB /* ComponentBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 995583A01E4679FA4BFD86D9 /* ComponentBase.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D6801A820BA8F39AFDA409BB /* juce_graphics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A9832EE94687F4348137CC8 /* juce_graphics.mm */; };
@@ -567,7 +565,6 @@
 		6FB19FDD341DBBA678277742 /* juce_HeapBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_HeapBlock.h; path = ../../../JUCE/modules/juce_core/memory/juce_HeapBlock.h; sourceTree = SOURCE_ROOT; };
 		70175B831EC2B37D022C6B4E /* juce_android_Network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_android_Network.cpp; path = ../../../JUCE/modules/juce_core/native/juce_android_Network.cpp; sourceTree = SOURCE_ROOT; };
 		70DA25FFA420E5EACEEE4594 /* juce_AnimatedPositionBehaviours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_AnimatedPositionBehaviours.h; path = ../../../JUCE/modules/juce_gui_basics/layout/juce_AnimatedPositionBehaviours.h; sourceTree = SOURCE_ROOT; };
-		70F44215D334AF15D10801E3 /* AUMIDIEffectBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUMIDIEffectBase.cpp; path = ../../../JUCE/modules/juce_audio_plugin_client/AU/CoreAudioUtilityClasses/AUMIDIEffectBase.cpp; sourceTree = SOURCE_ROOT; };
 		711F69499F41D5A923822BE0 /* juce_TextButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_TextButton.cpp; path = ../../../JUCE/modules/juce_gui_basics/buttons/juce_TextButton.cpp; sourceTree = SOURCE_ROOT; };
 		7161E3BBAD51CFEAFBA02672 /* juce_XmlElement.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_XmlElement.cpp; path = ../../../JUCE/modules/juce_core/xml/juce_XmlElement.cpp; sourceTree = SOURCE_ROOT; };
 		721E0AD36867889F6057DD90 /* juce_LeakedObjectDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_LeakedObjectDetector.h; path = ../../../JUCE/modules/juce_core/memory/juce_LeakedObjectDetector.h; sourceTree = SOURCE_ROOT; };
@@ -772,7 +769,6 @@
 		AA13598C38DABF18B64A4CED /* juce_android_Files.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_android_Files.cpp; path = ../../../JUCE/modules/juce_core/native/juce_android_Files.cpp; sourceTree = SOURCE_ROOT; };
 		AA5758FA46CD3D75E0DA1DD5 /* juce_ZipFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_ZipFile.h; path = ../../../JUCE/modules/juce_core/zip/juce_ZipFile.h; sourceTree = SOURCE_ROOT; };
 		AACB45C2DB14E1A9B4BBDC2E /* juce_TemporaryFile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_TemporaryFile.cpp; path = ../../../JUCE/modules/juce_core/files/juce_TemporaryFile.cpp; sourceTree = SOURCE_ROOT; };
-		AADFC353269654B8475D0AC8 /* AUEffectBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AUEffectBase.cpp; path = ../../../JUCE/modules/juce_audio_plugin_client/AU/CoreAudioUtilityClasses/AUEffectBase.cpp; sourceTree = SOURCE_ROOT; };
 		AB005AFCAE201FEDCFD9AA07 /* juce_Synthesiser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_Synthesiser.cpp; path = ../../../JUCE/modules/juce_audio_basics/synthesisers/juce_Synthesiser.cpp; sourceTree = SOURCE_ROOT; };
 		AB679889292994BE0F18D517 /* juce_ios_UIViewComponent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = juce_ios_UIViewComponent.mm; path = ../../../JUCE/modules/juce_gui_extra/native/juce_ios_UIViewComponent.mm; sourceTree = SOURCE_ROOT; };
 		AB9365D7209D83A4F9F781E4 /* juce_ColourSelector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_ColourSelector.cpp; path = ../../../JUCE/modules/juce_gui_extra/misc/juce_ColourSelector.cpp; sourceTree = SOURCE_ROOT; };
@@ -1644,10 +1640,8 @@
 				0E519A5B10EF3002CD3F290C /* AUCarbonViewControl.cpp */,
 				1C03224B9695A47879121985 /* AUCarbonViewDispatch.cpp */,
 				3A3B4FE9E3D907389D68483F /* AUDispatch.cpp */,
-				AADFC353269654B8475D0AC8 /* AUEffectBase.cpp */,
 				E3E5CF8FD521217AE86015D3 /* AUInputElement.cpp */,
 				C2FB1CC859933918CC82C3EA /* AUMIDIBase.cpp */,
-				70F44215D334AF15D10801E3 /* AUMIDIEffectBase.cpp */,
 				D366B11120B6FF4C0B5F596C /* AUOutputBase.cpp */,
 				EC392592E46CFFCDAEF0BF08 /* AUOutputElement.cpp */,
 				434AA305611A4DEF3B27D0E3 /* AUScopeElement.cpp */,
@@ -3202,12 +3196,10 @@
 				74C100070D99AC591C6F7573 /* AUCarbonViewDispatch.cpp in Sources */,
 				CD6049452FE417048CBC329A /* AUDispatch.cpp in Sources */,
 				2F55CA511C173C0B00E69284 /* gui_components_configurator.cpp in Sources */,
-				D1F8B442396FB9408957E83F /* AUEffectBase.cpp in Sources */,
 				FD28A3A41152CC983D8C60C8 /* AUInputElement.cpp in Sources */,
 				2F55CA531C173C0B00E69284 /* network_gui_component.cpp in Sources */,
 				2F55CA5B1C173C0B00E69284 /* zoom_gui_component.cpp in Sources */,
 				E8DD78B34ED7A5ADB1833618 /* AUMIDIBase.cpp in Sources */,
-				B59FDBB850014FFC19FFFB57 /* AUMIDIEffectBase.cpp in Sources */,
 				DBD7DB4B5AD87A8FBB97A6F4 /* AUOutputBase.cpp in Sources */,
 				2F75DB8B1C2EE0160050E276 /* logger.cpp in Sources */,
 				2F55CA651C1740CB00E69284 /* network_config.cpp in Sources */,
