@@ -41,7 +41,10 @@ SSR::Scene::Scene(float scene_range)
                "Reference Orientation")
 
 {
-SSR::Logger::get_instance()->log(SSR::Logger::Level::INFO, "Scene wac created!", false);
+SSR::Logger::get_instance()->log(SSR::Logger::Level::INFO, "Scene was created!", false);
+    
+//    new_source("Default Source", 1);
+
     
 }
 
@@ -68,6 +71,10 @@ void SSR::Scene::interpret_xml_message(std::string xml_message)
     
     // TODO: bug in update!
     if (main_element->hasTagName("update")) {
+        
+        //Clean Sources
+//        sources->clear();
+//        ids_and_names->clear();
         
         forEachXmlChildElement (*main_element, e) {
             
@@ -369,6 +376,7 @@ const source_iterator SSR::Scene::get_iterator(unsigned int id)
 
 void SSR::Scene::set_name_of_source(const unsigned int id, const std::string name)
 {
+//    std::cout << id << " " << name << std::endl;
   auto source = get_iterator(id);
   source->set_name(name);
   std::for_each(begin(*ids_and_names), end(*ids_and_names), [&id, &name](std::pair<unsigned int, std::string> p) {
