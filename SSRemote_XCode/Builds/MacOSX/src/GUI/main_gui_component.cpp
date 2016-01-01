@@ -39,18 +39,19 @@ Main_GUI_component::Main_GUI_component(Controller* controller)
     addAndMakeVisible(source_frame);
     addAndMakeVisible(head_frame);
     
+    
     head_frame->setBounds(0,0,head_frame->getWidth(),head_frame->getHeight());
     source_frame->setBounds(0,100,source_frame->getWidth(),source_frame->getHeight());
-    
-    //TODO: Think about that...
-    head_frame->set_connected(processor->is_connected_to_ssr());
     
     //All addAndMakeVisible objects have to be initialised before here!!
     setSize(900, 600);
     
     processor->read_ssr_incoming_message();
     
-    startTimer(10);//starts timer with interval of 50mS
+    processor->is_connected_to_ssr() ? setEnabled(true) : setEnabled(false);
+
+    startTimer(100);//starts timer with interval of 100mS    
+    
 }
 
 Main_GUI_component::~Main_GUI_component()
