@@ -27,37 +27,37 @@ SSR::Head_frame_GUI_component::Head_frame_GUI_component(Controller* controller)
 , new_source_button(new juce::TextButton("new_source_button"))
 , save_button(new juce::TextButton("save_buton"))
 {
-  addAndMakeVisible(*network_component);
-  network_component->setBounds(35, 41, network_component->getWidth(), network_component->getHeight());
-
-  addAndMakeVisible(*new_source_button);
-  new_source_button->setBounds(744, 41, 138, 26);
+    addAndMakeVisible(*network_component);
+    network_component->setBounds(35, 41, network_component->getWidth(), network_component->getHeight());
+    
+    addAndMakeVisible(*new_source_button);
+    new_source_button->setBounds(744, 41, 138, 26);
     
     addAndMakeVisible(*save_button);
     save_button->setBounds(600, 41, 138, 26);
-
+    
     configure_save_button();
-  configure_new_source_button();
-
-  setSize(900, 100);
+    configure_new_source_button();
+    
+    setSize(900, 100);
 }
 
 SSR::Head_frame_GUI_component::~Head_frame_GUI_component()
 {
-  removeAllChildren();
+    removeAllChildren();
 }
 
 void SSR::Head_frame_GUI_component::paint(juce::Graphics& graphics)
 {
-  typedef SSR::colour::Colours colours;
-
-  graphics.fillAll(SSR::colour::get_colour(colours::white));
-
-  graphics.setColour(SSR::colour::get_colour(colours::frame_colour));
-  graphics.drawRoundedRectangle(10, 28, 180, 50, 10.0f, 2.0f);
-
-  graphics.setColour(SSR::colour::get_colour(colours::background_grey));
-  graphics.fillRoundedRectangle(10, 28, 180, 50, 10.0f);
+    typedef SSR::colour::Colours colours;
+    
+    graphics.fillAll(SSR::colour::get_colour(colours::white));
+    
+    graphics.setColour(SSR::colour::get_colour(colours::frame_colour));
+    graphics.drawRoundedRectangle(10, 28, 180, 50, 10.0f, 2.0f);
+    
+    graphics.setColour(SSR::colour::get_colour(colours::background_grey));
+    graphics.fillRoundedRectangle(10, 28, 180, 50, 10.0f);
 }
 
 void SSR::Head_frame_GUI_component::buttonClicked(juce::Button* buttonThatWasClicked)
@@ -84,25 +84,29 @@ void SSR::Head_frame_GUI_component::buttonClicked(juce::Button* buttonThatWasCli
 
 bool SSR::Head_frame_GUI_component::get_connected() const
 {
-  return network_component->get_connected();
+    return network_component->get_connected();
 }
 
 void SSR::Head_frame_GUI_component::set_connected(const bool new_state)
 {
-  network_component->set_connected(new_state);
+    network_component->set_connected(new_state);
 }
 
 void SSR::Head_frame_GUI_component::configure_new_source_button()
 {
-  SSR::configure_text_button(*new_source_button, "New Source");
-
-  new_source_button->addListener(this);
+    SSR::configure_text_button(*new_source_button, "New Source");
+    
+    new_source_button->addListener(this);
 }
 
 void SSR::Head_frame_GUI_component::configure_save_button()
 {
     
     SSR::configure_text_button(*save_button, "Save XML");
+    
+    if (getProcessor()->is_writing_xml()){
+        save_button->setToggleState(true, juce::dontSendNotification);
+    }
     
     save_button->addListener(this);
 }
