@@ -26,44 +26,47 @@ SSR::Network_gui_component::Network_gui_component(Controller* controller)
 , connected_button(new juce::TextButton("connected_button"))
 , is_connected(false)
 {
-  addAndMakeVisible(*connected_button);
-
-  SSR::configure_text_button(*connected_button, "Connected");
-  connected_button->addListener(this);
-  connected_button->setBounds(0, 0, 138, 25);
-
-  setSize(138, 26);
+    addAndMakeVisible(*connected_button);
+    
+    SSR::configure_text_button(*connected_button, "Connected");
+    connected_button->setToggleState(is_connected, juce::dontSendNotification);
+    
+    
+    connected_button->addListener(this);
+    connected_button->setBounds(0, 0, 138, 25);
+    
+    setSize(138, 26);
 }
 
 SSR::Network_gui_component::~Network_gui_component()
 {
-  removeAllChildren();
+    removeAllChildren();
 }
 
 void SSR::Network_gui_component::set_connected(const bool connected)
 {
-  is_connected = connected;
-  connected_button->setToggleState(is_connected, juce::dontSendNotification);
+    is_connected = connected;
+    connected_button->setToggleState(is_connected, juce::dontSendNotification);
 }
 
 bool SSR::Network_gui_component::get_connected() const
 {
-  return is_connected;
+    return is_connected;
 }
 
 void SSR::Network_gui_component::buttonClicked(Button* button)
 {
-
-  if (button == connected_button.get()) {
-      Controller* processor = getProcessor();
-
-      if (!is_connected) {
-          processor->connect();
-      }
-
-      is_connected = processor->is_connected_to_ssr();
-
-      connected_button->setToggleState(is_connected, juce::dontSendNotification);
-  }
-
+    
+    if (button == connected_button.get()) {
+        Controller* processor = getProcessor();
+        
+        if (!is_connected) {
+            processor->connect();
+        }
+        
+        is_connected = processor->is_connected_to_ssr();
+        
+        connected_button->setToggleState(is_connected, juce::dontSendNotification);
+    }
+    
 }
