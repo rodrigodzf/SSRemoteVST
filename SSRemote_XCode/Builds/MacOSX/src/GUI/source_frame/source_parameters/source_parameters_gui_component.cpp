@@ -195,10 +195,14 @@ void SSR::Source_parameters_gui_component::reload_source_dropdown()
   sources_dropdown->clear(juce::dontSendNotification);
 
   std::for_each(begin(*ids_and_names), end(*ids_and_names), [=](std::pair<unsigned int, std::string> p) {
+      
+//      std::cout << p.first << " " << p.second << std::endl;
     sources_dropdown->addItem(p.second, p.first);
   });
 
-  sources_dropdown->setSelectedId(controller->get_source().get_id(), juce::dontSendNotification);
+    if (ids_and_names->size() > 0){
+        sources_dropdown->setSelectedId(controller->get_source().get_id(), juce::dontSendNotification);
+    }
 }
 
 void SSR::Source_parameters_gui_component::make_all_visible()
