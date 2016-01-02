@@ -195,15 +195,18 @@ void Controller::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessag
     
     AudioPlayHead::CurrentPositionInfo info;
     getPlayHead()->getCurrentPosition(info);
-    playback_time = info.timeInSeconds;
+
     
-    
-    if (writing_xml){
-    
-        write_xml();
-        
+    if (playback_time != info.timeInSeconds){
+        if (writing_xml) {
+            
+            write_xml();
+            
+        }
     }
     
+    playback_time = info.timeInSeconds;
+
     
     
     
@@ -630,7 +633,8 @@ bool Controller::write_xml()
 
 }
 
-void Controller::save_xml(const bool write){
+void Controller::save_xml(const bool write)
+{
     
     if (write){
         
@@ -638,9 +642,46 @@ void Controller::save_xml(const bool write){
 
         xml_file = new File(File::getCurrentWorkingDirectory().getChildFile("./TestJuce.xml"));
         String absolute_path = xml_file->getFullPathName();
-        std::cout << "Saving xml to" << absolute_path.toStdString() << std::endl;
+        SSR::Logger::get_instance()->log(SSR::Logger::Level::INFO, "Saving File to" + absolute_path.toStdString(), LOG_TO_FILE);
         
         spatdif = new XmlElement("spatdif");
+        
+        
+        /*
+         This is the meta section at the beggining of the xml file:
+         
+        <meta>
+         <info>
+            <annotation>the turenas insect trajectory</annotation>
+            <date>2013-10-17</date>
+            <author>jasch</author>
+        </info>
+        <extensions>media</extensions>
+        <ordering>time</ordering>
+        </meta>
+         */
+        
+        XmlElement* meta            = new XmlElement ("meta");
+        XmlElement* info            = new XmlElement ("info");
+        XmlElement* ordering        = new XmlElement ("ordering");
+        
+        XmlElement* annotation      = new XmlElement ("annotation");
+        XmlElement* date            = new XmlElement ("date");
+        XmlElement* author          = new XmlElement ("author");
+        
+        
+        annotation->addTextElement("Scene from SSR");
+        date->addTextElement("2015-01-03");
+        author->addTextElement("RDiaz");
+        
+        info->addChildElement(annotation);
+        info->addChildElement(date);
+        info->addChildElement(author);
+        
+        meta->addChildElement(info);
+        meta->addChildElement(ordering);
+        
+        spatdif->addChildElement(meta);
         
     } else {
         
