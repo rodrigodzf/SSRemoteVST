@@ -48,6 +48,15 @@ Main_GUI_component::Main_GUI_component(Controller* controller)
     
     processor->read_ssr_incoming_message();
     
+    if ( processor->is_connected_to_ssr()){
+    
+        std::cout << "is connected!" << std::endl;
+        
+    } else {
+    
+        std::cout << "is NOT connected!" << std::endl;
+
+    }
     processor->is_connected_to_ssr() ? setEnabled(true) : setEnabled(false);
 
     startTimer(100);//starts timer with interval of 100mS    

@@ -35,6 +35,16 @@ SSR::Source::Source(const unsigned int id, const std::string name, float scene_r
                 std::bind(SSR::translations::y_position_discrete_to_continuous, std::placeholders::_1, scene_range),
                 std::bind(SSR::translations::y_position_continuous_to_discrete, std::placeholders::_1, scene_range),
                 "Y Position")
+, radius(       0.0f,
+                0.0f,
+                std::bind(SSR::translations::x_position_discrete_to_continuous, std::placeholders::_1, scene_range),
+                std::bind(SSR::translations::x_position_continuous_to_discrete, std::placeholders::_1, scene_range),
+                "radius")
+, angle(        0.0f,
+                0.0f,
+                std::bind(SSR::translations::y_position_discrete_to_continuous, std::placeholders::_1, scene_range),
+                std::bind(SSR::translations::y_position_continuous_to_discrete, std::placeholders::_1, scene_range),
+                "angle")
 , gain(         1.0f,
                 1.0f,
                 SSR::translations::gain_discrete_to_continuous,
@@ -80,6 +90,8 @@ SSR::Source::Source(const SSR::Source& other)
 : id(other.id)
 , x_position(other.x_position)
 , y_position(other.y_position)
+, radius(other.radius)
+, angle(other.angle)
 , gain(other.gain)
 , orientation(other.orientation)
 , mute(other.mute)
@@ -155,6 +167,36 @@ SSR::Parameter<float, float> SSR::Source::get_y_position() const
 void SSR::Source::set_y_position_continuous(const float new_relative_position)
 {
   y_position.set_continuous_value(new_relative_position);
+}
+
+void SSR::Source::set_radius_discrete(const float position)
+{
+    radius.set_discrete_value(position);
+}
+
+SSR::Parameter<float, float> SSR::Source::get_radius() const
+{
+    return radius;
+}
+
+void SSR::Source::set_radius_continuous(const float new_relative_position)
+{
+    radius.set_continuous_value(new_relative_position);
+}
+
+void SSR::Source::set_angle_discrete(const float position)
+{
+    angle.set_discrete_value(position);
+}
+
+SSR::Parameter<float, float> SSR::Source::get_angle() const
+{
+    return angle;
+}
+
+void SSR::Source::set_angle_continuous(const float new_relative_position)
+{
+    angle.set_continuous_value(new_relative_position);
 }
 
 void SSR::Source::set_discrete_gain(const float gain_value, const bool linear)

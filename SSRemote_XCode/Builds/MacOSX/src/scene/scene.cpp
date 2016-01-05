@@ -43,7 +43,7 @@ SSR::Scene::Scene(float scene_range)
 {
 SSR::Logger::get_instance()->log(SSR::Logger::Level::INFO, "Scene was created!", false);
     
-//    new_source("Default Source", 1);
+    new_source("Default Source");
 
     
 }
@@ -236,6 +236,36 @@ void SSR::Scene::set_y_position_continuous_of_selected_source(const float positi
 SSR::Parameter<float, float> SSR::Scene::get_y_position_of_selected_source() const
 {
   return current_selected_source->get_y_position();
+}
+
+void SSR::Scene::set_radius_discrete_of_selected_source(const float radius)
+{
+    current_selected_source->set_radius_discrete(radius);
+}
+
+void SSR::Scene::set_radius_continuous_of_selected_source(const float radius)
+{
+    current_selected_source->set_radius_continuous(radius);
+}
+
+SSR::Parameter<float, float> SSR::Scene::get_radius_of_selected_source() const
+{
+    return current_selected_source->get_radius();
+}
+
+void SSR::Scene::set_angle_discrete_of_selected_source(const float angle)
+{
+    current_selected_source->set_angle_discrete(angle);
+}
+
+void SSR::Scene::set_angle_continuous_of_selected_source(const float angle)
+{
+    current_selected_source->set_angle_continuous(angle);
+}
+
+SSR::Parameter<float, float> SSR::Scene::get_angle_of_selected_source() const
+{
+    return current_selected_source->get_angle();
 }
 
 void SSR::Scene::set_gain_discrete_of_selected_source(const float gain, const bool linear)

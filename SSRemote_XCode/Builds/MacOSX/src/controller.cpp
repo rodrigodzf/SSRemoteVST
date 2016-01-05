@@ -207,10 +207,6 @@ void Controller::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessag
     
     playback_time = info.timeInSeconds;
 
-    
-    
-    
-//  std::cout << "time ins secs " << info.timeInSeconds << std::endl;
 }
 
 
@@ -395,6 +391,14 @@ const juce::String Controller::getParameterText(int index)
             parameter_text = scene->get_y_position_of_selected_source().get_continuous_value();
             break;
             
+        case source_parameter::radius_idx:
+            parameter_text = "Radius";
+            break;
+            
+        case source_parameter::angle_idx:
+            parameter_text = "Angle";
+            break;
+            
         case source_parameter::gain_idx:
             parameter_text = scene->get_gain_of_selected_source().get_continuous_value();
             break;
@@ -427,6 +431,11 @@ const juce::String Controller::getParameterText(int index)
     return juce::String(parameter_text);
 }
 
+
+//std::vector<float> Controller::car2pol(const float val){
+//
+//
+//}
 void Controller::setParameter(int parameterIndex, float newValue)
 {
     typedef SSR::Source::parameter source_parameter;
@@ -443,6 +452,42 @@ void Controller::setParameter(int parameterIndex, float newValue)
             
         case source_parameter::y_position_idx:
             scene->set_y_position_continuous_of_selected_source(newValue);
+            break;
+            
+        case source_parameter::radius_idx:
+            
+            /*
+             * Set Radius
+             *
+             *
+             */
+            
+            scene->set_radius_continuous_of_selected_source(newValue);
+            
+            scene->set_y_position_discrete_of_selected_source(newValue * std::cos(scene->get_angle_of_selected_source().get_continuous_value() * M_PI * 2));
+            scene->set_x_position_discrete_of_selected_source(newValue * std::sin(scene->get_angle_of_selected_source().get_continuous_value()* M_PI * 2));
+            
+            /*
+            float y,x;
+            
+
+            y = scene->get_y_position_of_selected_source().get_discrete_value();
+            x = scene->get_x_position_of_selected_source().get_discrete_value();
+            
+            scene->set_y_position_discrete_of_selected_source(std::sqrt(std::abs((newValue*newValue) - (y*y))));
+            scene->set_x_position_discrete_of_selected_source(std::sqrt(std::abs((newValue*newValue) - (x*x))));
+             
+            */
+            
+            break;
+            
+        case source_parameter::angle_idx:
+            
+            scene->set_angle_continuous_of_selected_source(newValue);
+            
+            scene->set_y_position_discrete_of_selected_source(scene->get_radius_of_selected_source().get_continuous_value() * std::cos(newValue * M_PI * 2));
+            scene->set_x_position_discrete_of_selected_source(scene->get_radius_of_selected_source().get_continuous_value() * std::sin(newValue * M_PI * 2));
+            
             break;
             
         case source_parameter::gain_idx:

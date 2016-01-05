@@ -44,6 +44,8 @@ namespace SSR
         enum parameter  {
             x_position_idx = 0,
             y_position_idx,
+            radius_idx,
+            angle_idx,
             gain_idx,
             orientation_idx,
             mute_idx,
@@ -211,7 +213,53 @@ namespace SSR
          *                                  the source Y position will be set to.
          */
         void set_y_position_continuous(const float position);
+
+        /**
+         * Setter for the source radius based on the listener.
+         *
+         * @param           radius        The new radius.
+         *
+         */
+        void set_radius_discrete(const float radius);
         
+        /**
+         * Returns the radius.
+         *
+         * @return the radius.
+         */
+        SSR::Parameter<float, float> get_radius() const;
+        
+        /**
+         * Setter for the continuous radius based on the listener.
+         *
+         * @param           radius          The new continuous radius to which
+         *                                  the source  will be set to.
+         */
+        void set_radius_continuous(const float radius);
+        
+        /**
+         * Setter for the source angle based on the listener.
+         *
+         * @param           angle           The new angle.
+         *
+         */
+        void set_angle_discrete(const float angle);
+        
+        /**
+         * Returns the the angle.
+         *
+         * @return the angle.
+         */
+        SSR::Parameter<float, float> get_angle() const;
+        
+        /**
+         * Setter for the continuous radius based on the listener.
+         *
+         * @param           angle           The new continuous angle to which
+         *                                  the source  will be set to.
+         */
+        void set_angle_continuous(const float angle);
+
         /**
          * Setter for the source gain. The transfered parameter
          * linear defines if the transfered value is linear gain or
@@ -448,6 +496,16 @@ namespace SSR
          * The source y position.
          */
         Parameter<float, float> y_position;
+        
+        /**
+         * The radius based on reference.
+         */
+        Parameter<float, float> radius;
+        
+        /**
+         * The angle based on reference.
+         */
+        Parameter<float, float> angle;
         
         /**
          * The source gain.
