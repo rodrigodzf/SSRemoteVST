@@ -36,6 +36,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      debugAsWhichUser = "root"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -44,8 +45,8 @@
       allowLocationSimulation = "YES">
       <PathRunnable
          runnableDebuggingMode = "0"
-         BundleIdentifier = "com.roli.pluginhost"
-         FilePath = "/Users/rodrigodiaz/Development/JUCE/examples/audio plugin host/Builds/MacOSX/build/Debug/Plugin Host.app">
+         BundleIdentifier = "com.cockos.reaper"
+         FilePath = "/Applications/REAPER64.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference

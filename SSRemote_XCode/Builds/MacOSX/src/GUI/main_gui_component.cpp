@@ -59,7 +59,7 @@ Main_GUI_component::Main_GUI_component(Controller* controller)
     }
     processor->is_connected_to_ssr() ? setEnabled(true) : setEnabled(false);
 
-    startTimer(100);//starts timer with interval of 100mS    
+    startTimer(100);//starts timer with interval of 100mS
     
 }
 
