@@ -172,8 +172,8 @@ void Controller::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessag
     // I've added this to avoid people getting screaming feedback
     // when they first compile the plugin, but obviously you don't need to
     // this code if your algorithm already fills all the output channels.
-    for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
+//    for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
+//        buffer.clear (i, 0, buffer.getNumSamples());
 
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
@@ -193,6 +193,8 @@ void Controller::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessag
     // Also it needs an scopedpointer http://www.juce.com/forum/topic/strange-problem-using-xmlelement-objects
     // Also might be easier to use tree value http://www.juce.com/forum/topic/value-valuetree-example-usage
     
+    
+
     AudioPlayHead::CurrentPositionInfo info;
     getPlayHead()->getCurrentPosition(info);
 
@@ -207,6 +209,7 @@ void Controller::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessag
     
     playback_time = info.timeInSeconds;
 
+     
 }
 
 

@@ -69,13 +69,8 @@ void SSR::Scene::interpret_xml_message(std::string xml_message)
     XmlDocument xml_document(xml_message);
     auto main_element = std::unique_ptr<juce::XmlElement>(xml_document.getDocumentElement());
     
-    // TODO: bug in update!
-    if (main_element->hasTagName("update")) {
-        
-        //Clean Sources
-//        sources->clear();
-//        ids_and_names->clear();
-        
+    if (main_element != NULL && main_element->hasTagName("update")) {
+
         forEachXmlChildElement (*main_element, e) {
             
             if (e->hasTagName("source")) {
@@ -123,6 +118,10 @@ void SSR::Scene::interpret_xml_message(std::string xml_message)
         }
         
         main_element->deleteAllChildElements();
+        
+    } else {
+    
+        std::cout << "error:drop message" << std::endl;
         
     }
     
